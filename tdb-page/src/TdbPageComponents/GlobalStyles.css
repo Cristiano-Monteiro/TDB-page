@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root{
+  font-size: 62.5%;
+
+  --white: #FFF;
+  --black: #000;
+  --main-color: #DDE5B6;
+  --secondary-color: #3A4D09;
+  --green-2: #C6CF9A;
+}
+
+body{
+  font-size: 1.6rem;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1{
+  color: red;
+}
