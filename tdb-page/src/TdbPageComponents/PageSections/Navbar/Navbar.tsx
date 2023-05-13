@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -21,33 +21,40 @@ export default function Navbar() {
   const menuBar2 = useRef<HTMLDivElement>(null);
   const menuBar3 = useRef<HTMLDivElement>(null);
 
-  // Condicional necessária para o funcionamento da navbar no ambiente mobile
-  // => Adiciona e remove as animações nos elementos "navbarTools" e "menuBar"
+  // Chama a função "handleMobileMenu" quando a página carrega
+  useEffect(() => {
+    handleMobileMenu();
+  }, []);
 
-  if(openMenu){
-    if(navbarTools.current){
-      navbarTools.current.style.transform = 'translateX(0)';
-    };
-    if(menuBar1.current && menuBar2.current && menuBar3.current){
-      menuBar1.current.style.transform = 'rotateZ(45deg)';
-      menuBar2.current.style.transform = 'scale(0)';
-      menuBar3.current.style.transform = 'rotateZ(-45deg)';
-    };
-  } else {
-    if(navbarTools.current){
-      navbarTools.current.style.transform = 'translateX(-100vw)';
-    };
-    if(menuBar1.current && menuBar2.current && menuBar3.current){
-      menuBar1.current.style.transform = 'rotateZ(0deg) translateY(-1.3rem)';
-      menuBar2.current.style.transform = 'scale(1)';
-      menuBar3.current.style.transform = 'rotateZ(0deg) translateY(1.3rem)';
+  // handleMobileMenu => Adiciona e remove as animações nos elementos "navbarTools" e "menuBar"
+  function handleMobileMenu(){
+    setOpenMenu(!openMenu);
+    
+    if(openMenu){
+      if(navbarTools.current){
+        navbarTools.current.style.transform = 'translateX(0)';
+      };
+      if(menuBar1.current && menuBar2.current && menuBar3.current){
+        menuBar1.current.style.transform = 'rotateZ(45deg)';
+        menuBar2.current.style.transform = 'scale(0)';
+        menuBar3.current.style.transform = 'rotateZ(-45deg)';
+      };
+    } else {
+      if(navbarTools.current){
+        navbarTools.current.style.transform = 'translateX(-100vw)';
+      };
+      if(menuBar1.current && menuBar2.current && menuBar3.current){
+        menuBar1.current.style.transform = 'rotateZ(0deg) translateY(-1.3rem)';
+        menuBar2.current.style.transform = 'scale(1)';
+        menuBar3.current.style.transform = 'rotateZ(0deg) translateY(1.3rem)';
+      };
     };
   };
 
   return (
     <nav className={styles.navbar}>
 
-      <div className={styles.menuIcon} onClick={() => setOpenMenu(!openMenu)}>
+      <div className={styles.menuIcon} onClick={() => handleMobileMenu()}>
         <div className={styles.menuBar1} ref={menuBar1}></div>
         <div className={styles.menuBar2} ref={menuBar2}></div>
         <div className={styles.menuBar3} ref={menuBar3}></div>
