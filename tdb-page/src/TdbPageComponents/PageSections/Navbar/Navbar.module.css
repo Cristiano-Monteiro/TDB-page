@@ -45,6 +45,8 @@
 
   transition: transform .4s ease;
   transform: translateX(-100vw);
+
+  list-style: none;
 }
 
 .navbarTools li a{

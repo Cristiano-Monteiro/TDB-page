@@ -10,7 +10,6 @@ export default function DefaultLayout() {
   return (
     <>
       <Navbar />
-      <h1>Default Layout</h1>
       <Outlet />
       {/* Footer */}
     </>

@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 import styles from './Navbar.module.css';
 
-import DatabaseIcon from '../Navbar/icons/database_icon.svg';
-import SearchIcon from '../Navbar/icons/search_icon.svg';
+import DatabaseIcon from '../../static/icons/database_icon.svg';
+import SearchIcon from '../../static/icons/search_icon.svg';
 
-import ToolsIcon from '../Navbar/icons/tools_icon.svg';
-import DownloadIcon from '../Navbar/icons/download_icon.svg';
-import InfoIcon from '../Navbar/icons/info_icon.svg';
+import ToolsIcon from '../../static/icons/tools_icon.svg';
+import DownloadIcon from '../../static/icons/download_icon.svg';
+import InfoIcon from '../../static/icons/info_icon.svg';
 
 export default function Navbar() {
   // Estados necessários nos funcionamentos de alguns componentes
