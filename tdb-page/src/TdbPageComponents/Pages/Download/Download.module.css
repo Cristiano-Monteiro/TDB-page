@@ -65,6 +65,35 @@
     width: 100%;
 }
 
+/*=== Sections animations ===*/
+
+.pageTitle,
+.pageSubtitle,
+.downloadLinks{
+    opacity: 0;
+    transform: translateX(-3rem);
+}
+
+.pageTitle{
+    animation: sectionAnimation 1s ease-in-out .1s forwards;
+}
+
+.pageSubtitle{
+    animation: sectionAnimation 1s ease-in-out .3s forwards;
+}
+
+.downloadLinks{
+    animation: sectionAnimation 1s ease-in-out .6s forwards;
+}
+
+@keyframes sectionAnimation {
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
 @media screen and (min-width: 780px) {
     .downloadLinks{
         max-width: 60rem;
