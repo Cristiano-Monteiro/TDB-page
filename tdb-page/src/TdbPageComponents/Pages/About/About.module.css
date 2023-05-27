@@ -243,6 +243,49 @@
     width: 100%;
 }
 
+/*=== Sections animations ===*/
+
+.pageTitle,
+.text,
+.submissionNewData,
+.contactUs,
+.collaborators,
+.citeTdb{
+    opacity: 0;
+    transform: translateX(-3rem);
+}
+
+.pageTitle{
+    animation: sectionAnimation 1s ease-in-out .1s forwards;
+}
+
+.text{
+    animation: sectionAnimation 1s ease-in-out .3s forwards;
+}
+
+.submissionNewData{
+    animation: sectionAnimation 1s ease-in-out .6s forwards;
+}
+
+.contactUs{
+    animation: sectionAnimation 1s ease-in-out 1.1s forwards;
+}
+
+.collaborators{
+    animation: sectionAnimation 1s ease-in-out 1.6s forwards;
+}
+
+.citeTdb{
+    animation: sectionAnimation 1s ease-in-out 2s forwards;
+}
+
+@keyframes sectionAnimation {
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @media screen and (min-width: 600px) {
     .collaborators ul{
         flex-direction: row;
