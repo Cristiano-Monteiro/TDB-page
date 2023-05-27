@@ -42,6 +42,22 @@
     gap: 2.8rem;
 }
 
+.descriptionTitle{
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.descriptionTitle figure{
+    width: 4rem;
+    min-width: 4rem;
+    height: 4rem;
+}
+
+.descriptionTitle figure img{
+    width: 100%;
+}
+
 .descriptionAbout{
     display: flex;
     flex-direction: column;
@@ -92,6 +108,22 @@
 
     padding: var(--padding);
     font-size: 1.8rem;
+}
+
+.publicationsTitle{
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.publicationsTitle figure{
+    width: 4rem;
+    min-width: 4rem;
+    height: 4rem;
+}
+
+.publicationsTitle figure img{
+    width: 100%;
 }
 
 .publicationsContent{
@@ -152,27 +184,28 @@
     gap: 2rem;
 }
 
-.lastPapers .title{
+.lastPapersTitle{
     display: flex;
     align-items: center;
+    gap: 1.2rem;
 }
 
-.lastPapers .title figure{
-    width: 4rem;
-    height: 4rem;
+.lastPapersTitle figure{
+    width: 2.8rem;
+    height: 2.8rem;
     position: relative;
     display: flex;
-    top: .5rem;
+    top: .3rem;
 }
 
-.lastPapers .title figure img{
+.lastPapersTitle figure img{
     width: 100%;
     position: absolute;
 }
 
-.lastPapers figure img:last-child{
-    bottom: 1rem;
-    left: 1rem;
+.lastPapersTitle figure img:last-child{
+    bottom: .7rem;
+    left: .5rem;
     z-index: 2;
 }
 
@@ -252,6 +285,12 @@
         padding: 2rem 8rem;
     }
 
+    .descriptionTitle figure{
+        min-width: auto;
+        width: 3.1rem;
+        height: 3.1rem;
+    }
+
     .description ul{
         align-items: flex-start;
         text-align: left;
@@ -280,6 +319,12 @@
     .publications{
         font-size: 1.6rem;
         padding: 2rem 8rem;
+    }
+
+    .publicationsTitle figure{
+        min-width: auto;
+        width: 3.1rem;
+        height: 3.1rem;
     }
 
     .publicationsContent{

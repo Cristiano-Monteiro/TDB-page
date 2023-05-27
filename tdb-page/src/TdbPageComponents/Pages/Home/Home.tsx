@@ -4,6 +4,8 @@ import DatabaseIcon from '../../static/icons/database_icon.svg';
 import TreeIcon from '../../static/icons/tree_icon.svg';
 import FileIcon from '../../static/icons/file_icon.svg';
 import FileFillIcon from '../../static/icons/file_fill_icon.svg';
+import DescriptionIcon from '../../static/icons/description_icon.svg';
+import LibraryBooksIcon from '../../static/icons/library_books_icon.svg';
 
 export default function Home(){
     return(
@@ -18,7 +20,12 @@ export default function Home(){
                 </div>
             </div>
             <section className={styles.description}>
-                <h2>Genus Description</h2>
+                <div className={styles.descriptionTitle}>
+                    <figure>
+                        <img src={DescriptionIcon} alt="Icon of section Genus Description" />
+                    </figure>
+                    <h2>Genus Description</h2>
+                </div>
                 <div className={styles.descriptionAbout}>
                     <figure>
                         <img src={TreeIcon} alt="Ícone de uma árvore" />
@@ -60,7 +67,12 @@ export default function Home(){
                 <a href="#" target='_blank'>Learn More</a>
             </section>
             <section className={styles.publications}>
-                <h2>Group publications</h2>
+                <div className={styles.publicationsTitle}>
+                    <figure>
+                        <img src={LibraryBooksIcon} alt="Icon of section Group publications" />
+                    </figure>
+                    <h2>Group publications</h2>
+                </div>
                 <div className={styles.publicationsContent}>
                     <figure>
                         <img src={FileIcon} alt="Ícone do botão para o DOI da publicação" />
@@ -83,12 +95,12 @@ export default function Home(){
                 <a href="https://doi.org/10.1016/j.gene.2022.146904" target='_blank'>Learn More</a>
             </section>
             <section className={styles.lastPapers}>
-                <div className={styles.title}>
-                    <h2>Last papers</h2>
+                <div className={styles.lastPapersTitle}>
                     <figure>
                         <img src={FileFillIcon} alt="Ícone dos últimos artigos" />
                         <img src={FileIcon} alt="Ícone dos últimos artigos" />
                     </figure>
+                    <h2>Last papers</h2>
                 </div>
                 <ul>
                     <li>
