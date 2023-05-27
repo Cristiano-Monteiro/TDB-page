@@ -7,9 +7,13 @@ import styles from './Navbar.module.css';
 import DatabaseIcon from '../../static/icons/database_icon.svg';
 import SearchIcon from '../../static/icons/search_icon.svg';
 
+import HomeIcon from '../../static/icons/home_fill_icon.svg';
 import ToolsIcon from '../../static/icons/tools_icon.svg';
 import DownloadIcon from '../../static/icons/download_icon.svg';
 import InfoIcon from '../../static/icons/info_icon.svg';
+
+import BlastIcon from '../../static/icons/blast_icon.svg';
+import GeneticIcon from '../../static/icons/genetic_icon.svg';
 
 export default function Navbar() {
   // Estados necessários nos funcionamentos de alguns componentes
@@ -44,9 +48,9 @@ export default function Navbar() {
         navbarTools.current.style.transform = 'translateX(-100vw)';
       };
       if(menuBar1.current && menuBar2.current && menuBar3.current){
-        menuBar1.current.style.transform = 'rotateZ(0deg) translateY(-1.3rem)';
+        menuBar1.current.style.transform = 'rotateZ(0deg) translateY(-.9rem)';
         menuBar2.current.style.transform = 'scale(1)';
-        menuBar3.current.style.transform = 'rotateZ(0deg) translateY(1.3rem)';
+        menuBar3.current.style.transform = 'rotateZ(0deg) translateY(.9rem)';
       };
     };
   };
@@ -69,10 +73,30 @@ export default function Navbar() {
 
       <ul className={styles.navbarTools} ref={navbarTools}>
         <li>
-          <Link to="/tools">
+          <Link to="/">
+            <img src={HomeIcon} alt="Ícone de início" />
+            Home
+          </Link>
+        </li>
+        <li>
+          <span className={styles.toolsBttn}>
             <img src={ToolsIcon} alt="Ícone de ferramentas" />
             Tools
-          </Link>
+          </span>
+          <div className={styles.dropDown}>
+            <Link to="/blast">
+              <span>
+                <img src={BlastIcon} alt="BLAST tool icon " />
+                BLAST
+              </span>
+            </Link>
+            <Link to="/jbrowse">
+              <span>
+                <img src={GeneticIcon} alt="JBROWSE tool icon" />
+                JBROWSE
+              </span>
+            </Link>
+          </div>
         </li>
         <li>
           <Link to="/download">

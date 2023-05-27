@@ -1,26 +1,265 @@
 .container{
-    border: 1px solid;
     width: 100%;
     height: 100%;
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
 }
 
 .welcomeMessage{
     text-align: center;
     color: var(--secondary-color);
+    line-height: 2.6rem;
 }
 
 .welcomeMessage h2{
-    font-size: 2rem;
+    font-size: 2.1rem;
 }
 
 .welcomeMessage h1{
-    font-size: 2.5rem;
+    font-size: 2.7rem;
 }
 
 .description{
+    width: 100%;
+    max-width: 90rem;
     background-color: var(--main-color);
-    padding: 1.5rem;
+    padding: var(--padding);
     border-radius: 1.5rem;
     text-align: center;
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.8rem;
+}
+
+.descriptionAbout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descriptionAbout figure{
+    width: 8rem;
+}
+
+.descriptionAbout figure img{
+    width: 100%;
+}
+
+.description ul{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    list-style-position: inside;
+}
+
+.description a{
+    border-radius: 1.5rem;
+    padding: 1.5rem 4rem;
+    color: var(--secondary-color);
+    font-weight: 900;
+    background-color: var(--color-bttn);
+    transition: box-shadow .25s ease-in-out, transform .25s ease-in-out;
+}
+
+.description a:hover{
+    box-shadow: 0 5px 8px #BBB;
+    transform: scale(1.05) translateY(-.4rem);
+}
+
+.publications{
+    width: 100%;
+    max-width: 90rem;
+    background-color: var(--main-color);
+    border-radius: 1.5rem;
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.8rem;
+
+    padding: var(--padding);
+    font-size: 1.8rem;
+}
+
+.publicationsContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.publicationsContent figure{
+    width: 8rem;
+}
+
+.publicationsContent figure img{
+    width: 100%;
+}
+
+.publicationsContent ul{
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-align: left;
+    list-style-position: inside;
+}
+
+.publications a{
+    border-radius: 1.5rem;
+    padding: 1.5rem 4rem;
+    color: var(--secondary-color);
+    font-weight: 900;
+    background-color: var(--color-bttn);
+    transition: box-shadow .25s ease-in-out, transform .25s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+.publications a:hover{
+    box-shadow: 0 5px 8px #BBB;
+    transform: scale(1.05) translateY(-.4rem);
+}
+
+.lastPapers{
+    /*Repetição*/
+    width: 100%;
+    max-width: 90rem;
+    background-color: var(--main-color);
+    padding: var(--padding);
+    border-radius: 1.5rem;
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.lastPapers .title{
+    display: flex;
+    align-items: center;
+}
+
+.lastPapers figure{
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    display: flex;
+    top: .5rem;
+}
+
+.lastPapers figure img{
+    width: 100%;
+    position: absolute;
+}
+
+.lastPapers figure img:last-child{
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 2;
+}
+
+.lastPapers ul{
+    /*Repetição*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-position: inside;
+
+    gap: 1rem;
+}
+
+@media screen and (min-width: 780px) {
+    .welcomeMessage h2{
+        font-size: 2.3rem;
+    }
+
+    .welcomeMessage h1{
+        font-size: 3.2rem;
+    }
+
+    .welcomeMessage div{
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+    }
+
+    .welcomeMessage div figure{
+        height: 4rem;
+    }
+
+    .welcomeMessage div figure img{
+        height: 100%;
+    }
+
+    .description{
+        font-size: 1.6rem;
+        padding: 2rem 8rem;
+    }
+
+    .description ul{
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .descriptionAbout{
+        width: 100%;
+        max-width: 65rem;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .descriptionAbout figure{
+        width: 12rem;
+    }
+
+    .descriptionAbout figure img{
+        width: 100%;
+    }
+
+    .descriptionAbout p{
+        flex: 1;
+        text-align: left;
+    }
+
+    .publications{
+        font-size: 1.6rem;
+        padding: 2rem 8rem;
+    }
+
+    .publicationsContent{
+        flex-direction: row;
+        text-align: left;
+        gap: 2rem;
+        max-width: 65rem;
+    }
+
+    .publicationsContent figure{
+        width: 11rem;
+    }
+
+    .publicationsContent p{
+        flex: 1;
+    }
+
+    .publicationsContent ul{
+        flex: 1;
+    }
+
+    .lastPapers{
+        font-size: 1.6rem;
+        padding: 2rem 8rem;
+    }
 }

@@ -14,6 +14,9 @@
   --main-color: #DDE5B6;
   --secondary-color: #3A4D09;
   --green-2: #C6CF9A;
+  --color-bttn: #ADC178;
+
+  --padding: 2rem;
 }
 
 body{
