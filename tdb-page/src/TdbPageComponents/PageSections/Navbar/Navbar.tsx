@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import styles from './Navbar.module.css';
 
