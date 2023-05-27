@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import styles from './Navbar.module.css';
 
@@ -36,7 +36,7 @@ export default function Navbar() {
     
     if(openMenu){
       if(navbarTools.current){
-        navbarTools.current.style.transform = 'translateX(0)';
+        navbarTools.current.style.left = '0vw';
       };
       if(menuBar1.current && menuBar2.current && menuBar3.current){
         menuBar1.current.style.transform = 'rotateZ(45deg)';
@@ -45,7 +45,7 @@ export default function Navbar() {
       };
     } else {
       if(navbarTools.current){
-        navbarTools.current.style.transform = 'translateX(-100vw)';
+        navbarTools.current.style.left = '-100vw';
       };
       if(menuBar1.current && menuBar2.current && menuBar3.current){
         menuBar1.current.style.transform = 'rotateZ(0deg) translateY(-.9rem)';
@@ -57,26 +57,23 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-
       <div className={styles.menuIcon} onClick={() => handleMobileMenu()}>
         <div className={styles.menuBar1} ref={menuBar1}></div>
         <div className={styles.menuBar2} ref={menuBar2}></div>
         <div className={styles.menuBar3} ref={menuBar3}></div>
       </div>
-
-      <Link to='/' className={styles.tdbLogo}>
+      <NavLink to='/' className={styles.tdbLogo}>
         <figure>
           <img src={DatabaseIcon} alt="Ícone do Theobroma DataBase" />
         </figure>
         <h2>TDB</h2>
-      </Link>
-
+      </NavLink>
       <ul className={styles.navbarTools} ref={navbarTools}>
         <li>
-          <Link to="/">
+          <NavLink to="/">
             <img src={HomeIcon} alt="Ícone de início" />
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
           <span className={styles.toolsBttn}>
@@ -84,40 +81,34 @@ export default function Navbar() {
             Tools
           </span>
           <div className={styles.dropDown}>
-            <Link to="/blast">
-              <span>
-                <img src={BlastIcon} alt="BLAST tool icon " />
-                BLAST
-              </span>
-            </Link>
-            <Link to="/jbrowse">
-              <span>
-                <img src={GeneticIcon} alt="JBROWSE tool icon" />
-                JBROWSE
-              </span>
-            </Link>
+            <NavLink to="/blast">
+              <img src={BlastIcon} alt="BLAST tool icon " />
+              BLAST
+            </NavLink>
+            <NavLink to="/jbrowse">
+              <img src={GeneticIcon} alt="JBROWSE tool icon" />
+              JBROWSE
+            </NavLink>
           </div>
         </li>
         <li>
-          <Link to="/download">
+          <NavLink to="/download">
             <img src={DownloadIcon} alt="Ícone de download" />
             Download
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">
+          <NavLink to="/about">
             <img src={InfoIcon} alt="Ícone de informações" />
             About
-          </Link>
+          </NavLink>
         </li>
       </ul>
-
       <div className={styles.searchBttn}>
         <figure>
           <img src={SearchIcon} alt="Ícone de Pesquisa" />
         </figure>
       </div>
-
     </nav>
   );
 };

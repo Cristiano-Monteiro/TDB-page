@@ -7,6 +7,10 @@
   justify-content: space-between;
   padding: 0 1.5rem;
   gap: 1rem;
+  border-bottom: 1px solid var(--white);
+  position: fixed;
+  top: 0;
+  z-index: 3;
 }
 
 .tdbLogo{
@@ -30,29 +34,30 @@
 }
 
 .navbarTools{
-  position: absolute;
-  left: 0;
   width: 100%;
   height: calc(100% - 4.5rem);
+  position: fixed;
+  left: -100vw;
   top: 4.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: #C6CF9A;
-  gap: 4.5rem;
+  gap: 1.5rem;
   font-size: 2.5rem;
   font-weight: bold;
-
-  transition: transform .4s ease;
-  transform: translateX(-100vw);
-
+  transition: left .4s ease;
   list-style: none;
 }
 
 .navbarTools li{
   position: relative;
+  border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .navbarTools li a{
@@ -60,39 +65,30 @@
   display: flex;
   align-items: center;
   gap: .5rem;
-  border-radius: 2rem;
-  padding: .2rem 0;
+  border-radius: 1rem;
+  justify-content: center;
+  width: 80%;
+  max-width: 35rem;
+  height: 6rem;
 }
-
 
 .toolsBttn{
   color: var(--secondary-color);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: .5rem;
-  border-radius: 2rem;
+  border-radius: 1.3rem;
   padding: .2rem 0;
   cursor: pointer;
+  width: 80%;
+  max-width: 35rem;
+  height: 6rem;
 }
 
 .navbarTools li a img,
 .toolsBttn img{
-  width: 2.8rem;
-}
-
-.navbarTools li::after{
-  content: '';
-  display: flex;
-  margin: auto;
-  width: 0%;
-  height: .15rem;
-  background-color: var(--secondary-color);
-  border-radius: 5rem;
-  transition: width .3s;
-}
-
-.navbarTools li:hover::after{
-  width: 100%;
+  width: 2.6rem;
 }
 
 .dropDown{
@@ -103,9 +99,9 @@
   justify-content: center;
   gap: 2rem;
   top: 100%;
-  left: -7.5rem;
   font-size: 2.5rem;
-  width: 25rem;
+  width: 80%;
+  max-width: 35rem;
   background-color: var(--main-color);
   border-radius: 1.5rem;
   padding: 2rem;
@@ -113,34 +109,17 @@
   display: none;
 }
 
-.dropDown span{
+.dropDown a{
   display: flex;
   align-items: center;
   justify-content: center;
   gap: .5rem;
-  padding: 0 0 .5rem;
   position: relative;
 }
 
-.dropDown span img{
+.dropDown a img{
   width: 2rem;
   height: 2rem;
-}
-
-.dropDown span::after{
-  content: '';
-  display: flex;
-  width: 0%;
-  height: .2rem;
-  background-color: var(--secondary-color);
-  border-radius: 5rem;
-  transition: width .3s;
-  position: absolute;
-  bottom: 0;
-}
-
-.dropDown span:hover::after{
-  width: 100%;
 }
 
 .navbarTools li:hover > .dropDown{
@@ -190,27 +169,41 @@
 @media screen and (min-width: 1024px) {
   .navbarTools{
     width: max-content;
-    height: 7rem;
+    height: 4.5rem;
     background-color: transparent;
     transform: translateX(0vw) !important;
     position: static;
     flex-direction: row;
-    font-size: 1.8rem;
+    font-size: 2.1rem;
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+
+  .navbarTools li a,
+  .toolsBttn{
+    width: auto;
+    height: auto;
+    padding: .5rem 1.8rem;
   }
 
   .navbarTools li a img,
   .toolsBttn img{
     width: 2rem;
+    height: 2rem;
   }
 
   .dropDown{
-    width: 13rem;
-    left: -2.9rem;
-    font-size: 1.8rem;
+    width: 20rem;
+    font-size: 2.1rem;
     border-radius: 0 0 1.5rem 1.5rem;
     padding: 1rem;
     gap: .9rem;
     border-bottom: 1px solid var(--white);
+    text-align: center;
+  }
+
+  .dropDown a{
+    line-height: 1rem;
   }
 
   .menuIcon{

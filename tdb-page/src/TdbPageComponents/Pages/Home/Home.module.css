@@ -152,7 +152,7 @@
     align-items: center;
 }
 
-.lastPapers figure{
+.lastPapers .title figure{
     width: 4rem;
     height: 4rem;
     position: relative;
@@ -160,7 +160,7 @@
     top: .5rem;
 }
 
-.lastPapers figure img{
+.lastPapers .title figure img{
     width: 100%;
     position: absolute;
 }
