@@ -29,3 +29,9 @@ body{
 li a.active{
   background-color: var(--color-bttn);
 }
+
+.main{
+  width: 100%;
+  height: 100%;
+  display: none;
+}
