@@ -17,8 +17,7 @@
 }
 
 .pageTitle figure{
-    width: 3rem;
-    height: 3rem;
+    width: 2.8rem;
 }
 
 .pageTitle figure img{
@@ -60,7 +59,7 @@
 
 .jbrowseContainer{
     width: 100%;
-    max-width: 130rem;
+    max-width: 120rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,17 +82,45 @@
     width: 100%;
 }
 
-.fig2{
-    cursor: pointer;
-    transition: width .5s ease;
+/*=== Sections animations ===*/
+
+.pageTitle,
+.families,
+.jbrowseContainer{
+    opacity: 0;
+    transform: translateX(-3rem);
 }
 
-.fig2:hover{
-    width: 50rem;
+.pageTitle{
+    animation: sectionAnimation 1s ease-in-out .1s forwards;
+}
+
+.families{
+    animation: sectionAnimation 1s ease-in-out .3s forwards;
+}
+
+.jbrowseContainer{
+    animation: sectionAnimation 1s ease-in-out .6s forwards;
+}
+
+@keyframes sectionAnimation {
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @media screen and (min-width: 920px) {
     .jbrowseContainer{
         flex-direction: row;
+    }
+
+    .fig2{
+        cursor: pointer;
+        transition: width .6s ease-in-out;
+    }
+    
+    .fig2:hover{
+        width: 50rem;
     }
 }
