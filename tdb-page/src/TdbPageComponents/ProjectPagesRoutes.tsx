@@ -11,7 +11,7 @@ import Jbrowse from "./Pages/Jbrowse/Jbrowse";
 
 export default function ProjectPagesRoutes() {
   return (
-    <BrowserRouter basename="/TDB-page/">
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="/" element={<Home/>} />
