@@ -55,6 +55,24 @@ export default function Navbar() {
     };
   };
 
+  // closeMenu => Fecha o menu através dos botões da navbar
+  function closeMenu(){
+    handleMobileMenu();
+  };
+
+  // closeMenuWithTdbLogo => Fecha o menu através do logo do TDB
+  function closeMenuWithTdbLogo(){
+    if(navbarTools.current){
+      navbarTools.current.style.left = '-100vw';
+    };
+    if(menuBar1.current && menuBar2.current && menuBar3.current){
+      menuBar1.current.style.transform = 'rotateZ(0deg) translateY(-.9rem)';
+      menuBar2.current.style.transform = 'scale(1)';
+      menuBar3.current.style.transform = 'rotateZ(0deg) translateY(.9rem)';
+    };
+    setOpenMenu(true);
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.menuIcon} onClick={() => handleMobileMenu()}>
@@ -62,7 +80,7 @@ export default function Navbar() {
         <div className={styles.menuBar2} ref={menuBar2}></div>
         <div className={styles.menuBar3} ref={menuBar3}></div>
       </div>
-      <NavLink to='/' className={styles.tdbLogo}>
+      <NavLink to='/' className={styles.tdbLogo} onClick={() => closeMenuWithTdbLogo()}>
         <figure>
           <img src={DatabaseIcon} alt="Ícone do Theobroma DataBase" />
         </figure>
@@ -70,7 +88,7 @@ export default function Navbar() {
       </NavLink>
       <ul className={styles.navbarTools} ref={navbarTools}>
         <li>
-          <NavLink to="/">
+          <NavLink to="/" onClick={() => closeMenu()}>
             <img src={HomeIcon} alt="Ícone de início" />
             Home
           </NavLink>
@@ -81,24 +99,24 @@ export default function Navbar() {
             Tools
           </span>
           <div className={styles.dropDown}>
-            <NavLink to="/blast">
+            <NavLink to="/blast" onClick={() => closeMenu()}>
               <img src={BlastIcon} alt="BLAST tool icon " />
               BLAST
             </NavLink>
-            <NavLink to="/jbrowse">
+            <NavLink to="/jbrowse" onClick={() => closeMenu()}>
               <img src={GeneticIcon} alt="JBROWSE tool icon" />
               JBROWSE
             </NavLink>
           </div>
         </li>
         <li>
-          <NavLink to="/download">
+          <NavLink to="/download" onClick={() => closeMenu()}>
             <img src={DownloadIcon} alt="Ícone de download" />
             Download
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about">
+          <NavLink to="/about" onClick={() => closeMenu()}>
             <img src={InfoIcon} alt="Ícone de informações" />
             About
           </NavLink>
