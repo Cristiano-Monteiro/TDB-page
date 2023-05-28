@@ -9,7 +9,6 @@
   gap: 1rem;
   border-bottom: 1px solid var(--white);
   position: fixed;
-  top: 0;
   z-index: 3;
 }
 
@@ -20,8 +19,8 @@
 }
 
 .tdbLogo figure{
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.5rem;
+  height: 2.6rem;
 }
 
 .tdbLogo figure img{
@@ -64,12 +63,17 @@
   color: var(--secondary-color);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: .5rem;
   border-radius: 1rem;
-  justify-content: center;
   width: 80%;
   max-width: 35rem;
   height: 6rem;
+  transition: background-color .5s ease;
+}
+
+.navbarTools li a:hover{
+  background-color: var(--color-bttn);
 }
 
 .toolsBttn{
@@ -88,7 +92,7 @@
 
 .navbarTools li a img,
 .toolsBttn img{
-  width: 2.6rem;
+  width: 2.7rem;
 }
 
 .dropDown{
@@ -119,7 +123,6 @@
 
 .dropDown a img{
   width: 2rem;
-  height: 2rem;
 }
 
 .navbarTools li:hover > .dropDown{
@@ -165,6 +168,20 @@
   transition: transform .4s ease;
 }
 
+/*=== Navbar animation ===*/
+
+.navbar{
+  top: -4.5rem;
+  opacity: 0;
+  animation: navbarAnimation 1s ease-in-out forwards;
+}
+
+@keyframes navbarAnimation {
+  100%{
+    top: 0;
+    opacity: 1;
+  }
+}
 
 @media screen and (min-width: 1024px) {
   .navbarTools{
@@ -192,13 +209,17 @@
     height: 2rem;
   }
 
+  .toolsBttn{
+    height: 4.45rem;
+  }
+
   .dropDown{
     width: 20rem;
     font-size: 2.1rem;
     border-radius: 0 0 1.5rem 1.5rem;
     padding: 1rem;
     gap: .9rem;
-    border-bottom: 1px solid var(--white);
+    border: 1px solid var(--white);
     text-align: center;
   }
 
