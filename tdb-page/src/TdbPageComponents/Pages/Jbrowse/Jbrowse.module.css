@@ -75,7 +75,7 @@
 }
 
 .jbrowseContainer .fig2{
-    width: 15rem;
+    width: 70%;
 }
 
 .fig2 img{
@@ -115,7 +115,8 @@
         flex-direction: row;
     }
 
-    .fig2{
+    .jbrowseContainer .fig2{
+        width: 15rem;
         cursor: pointer;
         transition: width .6s ease-in-out;
     }
