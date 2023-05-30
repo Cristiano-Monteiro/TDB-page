@@ -58,6 +58,7 @@ export default function Navbar() {
   // closeMenu => Fecha o menu através dos botões da navbar
   function closeMenu(){
     handleMobileMenu();
+    window.scrollTo(0,0);
   };
 
   // closeMenuWithTdbLogo => Fecha o menu através do logo do TDB
@@ -71,6 +72,7 @@ export default function Navbar() {
       menuBar3.current.style.transform = 'rotateZ(0deg) translateY(.9rem)';
     };
     setOpenMenu(true);
+    window.scrollTo(0,0);
   };
 
   return (
