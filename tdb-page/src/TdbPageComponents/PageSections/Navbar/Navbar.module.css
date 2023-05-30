@@ -19,8 +19,8 @@
 }
 
 .tdbLogo figure{
-  width: 2.5rem;
-  height: 2.6rem;
+  width: 2.4rem;
+  display: flex;
 }
 
 .tdbLogo figure img{
@@ -196,11 +196,17 @@
     padding: 0 1rem;
   }
 
+  .navbarTools li,
+  .dropDown a{
+    height: 100%;
+    padding: .4rem 0;
+  }
+  
   .navbarTools li a,
   .toolsBttn{
     width: auto;
-    height: auto;
-    padding: .5rem 1.8rem;
+    height: 100%;
+    padding: 0 .7rem;
   }
 
   .navbarTools li a img,
@@ -209,22 +215,16 @@
     height: 2rem;
   }
 
-  .toolsBttn{
-    height: 4.45rem;
-  }
-
   .dropDown{
     width: 20rem;
+    height: 10rem;
     font-size: 2.1rem;
     border-radius: 0 0 1.5rem 1.5rem;
     padding: 1rem;
     gap: .9rem;
     border: 1px solid var(--white);
+    border-top: 1px solid transparent;
     text-align: center;
-  }
-
-  .dropDown a{
-    line-height: 1rem;
   }
 
   .menuIcon{
