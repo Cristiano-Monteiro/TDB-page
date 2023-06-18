@@ -10,7 +10,7 @@ export default function Download(){
                 <figure>
                     <img src={DownloadIcon} alt="Ícone de download" />
                 </figure>
-                <h1>Donwload</h1>
+                <h1>Download</h1>
             </div>
             <h2 className={styles.pageSubtitle}>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.

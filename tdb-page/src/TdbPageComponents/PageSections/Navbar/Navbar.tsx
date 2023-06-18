@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import styles from './Navbar.module.css';
 
@@ -16,6 +16,8 @@ import BlastIcon from '../../static/icons/blast_icon.svg';
 import GeneticIcon from '../../static/icons/genetic_icon.svg';
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   // Estados necessários nos funcionamentos de alguns componentes
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -125,9 +127,16 @@ export default function Navbar() {
         </li>
       </ul>
       <div className={styles.searchBttn}>
-        <figure>
-          <img src={SearchIcon} alt="Ícone de Pesquisa" />
-        </figure>
+        <input 
+          type="text" 
+          name="searchButton" 
+          id="searchButton"
+          onKeyDown={(event)=>{
+            if(event.key == 'Enter'){
+              navigate("/search");
+            };
+          }}
+        />
       </div>
     </nav>
   );
